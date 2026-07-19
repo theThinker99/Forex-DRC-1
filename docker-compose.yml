@@ -1,0 +1,42 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: change-rdc-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: change_rdc
+      POSTGRES_PASSWORD: change_rdc_dev
+      POSTGRES_DB: change_rdc
+      # Locale francaise pour les tris alphabetiques
+      LANG: fr_FR.utf8
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U change_rdc -d change_rdc"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Stockage S3-compatible pour les pieces d'identite et bordereaux.
+  # Optionnel en developpement : STORAGE_DRIVER=local suffit.
+  minio:
+    image: minio/minio:latest
+    container_name: change-rdc-minio
+    restart: unless-stopped
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: change_rdc
+      MINIO_ROOT_PASSWORD: change_rdc_dev
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - minio_data:/data
+    profiles:
+      - s3
+
+volumes:
+  postgres_data:
+  minio_data:

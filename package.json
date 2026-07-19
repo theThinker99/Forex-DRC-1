@@ -1,0 +1,28 @@
+{
+  "name": "change-rdc",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Plateforme de change manuel pour la RDC avec controle BCC en lecture seule",
+  "workspaces": [
+    "apps/api",
+    "apps/web"
+  ],
+  "scripts": {
+    "dev": "npm-run-all --parallel dev:api dev:web",
+    "dev:api": "npm run start:dev --workspace=@change-rdc/api",
+    "dev:web": "npm run dev --workspace=@change-rdc/web",
+    "build": "npm run build --workspace=@change-rdc/api && npm run build --workspace=@change-rdc/web",
+    "db:generate": "npm run prisma:generate --workspace=@change-rdc/api",
+    "db:push": "npm run prisma:push --workspace=@change-rdc/api",
+    "db:migrate": "npm run prisma:migrate --workspace=@change-rdc/api",
+    "db:seed": "npm run prisma:seed --workspace=@change-rdc/api",
+    "db:reset": "npm run prisma:reset --workspace=@change-rdc/api",
+    "db:studio": "npm run prisma:studio --workspace=@change-rdc/api"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  },
+  "engines": {
+    "node": ">=20.11.0"
+  }
+}

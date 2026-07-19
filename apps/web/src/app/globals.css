@@ -1,0 +1,393 @@
+/* ---------------------------------------------------------------------------
+   Systeme de design — plateforme de change RDC.
+
+   Direction : sobre, institutionnel, credible pour du bancaire. Bleu nuit et
+   sarcelle, jamais de degrade violet/rose "IA" (anti-pattern explicite pour le
+   secteur financier). Contraste >= 4.5:1, cibles tactiles >= 44px, mobile-first.
+   --------------------------------------------------------------------------- */
+
+:root {
+  /* Marque */
+  --brand-900: #0b2e47;
+  --brand-800: #0f3d5c;
+  --brand-700: #145170;
+  --brand-600: #1d6a8f;
+  --accent-700: #0e7490;
+  --accent-600: #0891b2;
+  --accent-050: #ecfeff;
+
+  /* Neutres (ardoise) */
+  --ink-900: #0f172a;
+  --ink-800: #1e293b;
+  --ink-700: #334155;
+  --ink-500: #64748b;
+  --ink-400: #94a3b8;
+  --ink-300: #cbd5e1;
+  --ink-200: #e2e8f0;
+  --ink-100: #f1f5f9;
+  --ink-050: #f8fafc;
+  --white: #ffffff;
+
+  /* Etats semantiques */
+  --success-700: #15803d;
+  --success-050: #f0fdf4;
+  --warning-700: #b45309;
+  --warning-050: #fffbeb;
+  --danger-700: #b91c1c;
+  --danger-600: #dc2626;
+  --danger-050: #fef2f2;
+  --info-700: #1d4ed8;
+  --info-050: #eff6ff;
+
+  /* Rayons, ombres, espacements */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.08);
+  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08), 0 2px 4px rgba(15, 23, 42, 0.06);
+  --shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.12);
+
+  --font-sans: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "SFMono-Regular", "Cascadia Code", Consolas, "Liberation Mono", monospace;
+
+  --transition: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--ink-800);
+  background: var(--ink-100);
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+  color: var(--ink-900);
+  font-weight: 650;
+  line-height: 1.25;
+}
+
+a {
+  color: var(--accent-700);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* --- Utilitaires ---------------------------------------------------------- */
+
+.muted { color: var(--ink-500); }
+.small { font-size: 0.82rem; }
+.mono { font-family: var(--font-mono); }
+.nowrap { white-space: nowrap; }
+.right { text-align: right; }
+.center { text-align: center; }
+.strong { font-weight: 650; }
+
+.stack { display: flex; flex-direction: column; gap: 16px; }
+.stack-sm { display: flex; flex-direction: column; gap: 8px; }
+.row { display: flex; align-items: center; gap: 12px; }
+.row-wrap { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.between { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.grow { flex: 1; }
+.gap-sm { gap: 8px; }
+
+.grid { display: grid; gap: 16px; }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+@media (max-width: 900px) {
+  .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+}
+
+/* --- Carte ---------------------------------------------------------------- */
+
+.card {
+  background: var(--white);
+  border: 1px solid var(--ink-200);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+.card-pad { padding: 20px; }
+.card-head {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--ink-200);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.card-head h2, .card-head h3 { font-size: 1rem; }
+
+/* --- Boutons -------------------------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  background: var(--ink-100);
+  color: var(--ink-800);
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition), border-color var(--transition), box-shadow var(--transition);
+  white-space: nowrap;
+}
+.btn:hover { background: var(--ink-200); }
+.btn:focus-visible { outline: 2px solid var(--accent-600); outline-offset: 2px; }
+.btn:disabled { opacity: 0.55; cursor: not-allowed; }
+
+.btn-primary { background: var(--brand-800); color: var(--white); }
+.btn-primary:hover { background: var(--brand-700); }
+
+.btn-accent { background: var(--accent-700); color: var(--white); }
+.btn-accent:hover { background: var(--accent-600); }
+
+.btn-success { background: var(--success-700); color: var(--white); }
+.btn-success:hover { filter: brightness(1.08); }
+
+.btn-danger { background: var(--danger-600); color: var(--white); }
+.btn-danger:hover { background: var(--danger-700); }
+
+.btn-ghost { background: transparent; border-color: var(--ink-300); }
+.btn-ghost:hover { background: var(--ink-100); }
+
+.btn-sm { min-height: 34px; padding: 0 12px; font-size: 0.82rem; }
+.btn-block { width: 100%; }
+
+/* --- Champs de formulaire ------------------------------------------------- */
+
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field label { font-size: 0.82rem; font-weight: 600; color: var(--ink-700); }
+.field .hint { font-size: 0.76rem; color: var(--ink-500); }
+.field .error { font-size: 0.78rem; color: var(--danger-700); }
+
+.input, .select, .textarea {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid var(--ink-300);
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  color: var(--ink-900);
+  font-size: 0.95rem;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.textarea { min-height: 88px; padding: 10px 12px; resize: vertical; }
+.input:focus, .select:focus, .textarea:focus {
+  outline: none;
+  border-color: var(--accent-600);
+  box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.15);
+}
+.input:disabled, .select:disabled { background: var(--ink-100); color: var(--ink-500); }
+.input.invalid, .select.invalid { border-color: var(--danger-600); }
+
+/* --- Badges --------------------------------------------------------------- */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+.badge-neutral { background: var(--ink-100); color: var(--ink-700); }
+.badge-success { background: var(--success-050); color: var(--success-700); }
+.badge-warning { background: var(--warning-050); color: var(--warning-700); }
+.badge-danger  { background: var(--danger-050);  color: var(--danger-700); }
+.badge-info    { background: var(--info-050);    color: var(--info-700); }
+.badge-accent  { background: var(--accent-050);  color: var(--accent-700); }
+
+.dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+
+/* --- Tableaux ------------------------------------------------------------- */
+
+.table-wrap { width: 100%; overflow-x: auto; }
+.table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+.table th {
+  text-align: left;
+  padding: 11px 14px;
+  color: var(--ink-500);
+  font-weight: 650;
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--ink-200);
+  white-space: nowrap;
+}
+.table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--ink-100);
+  vertical-align: middle;
+}
+.table tbody tr { transition: background var(--transition); }
+.table tbody tr:hover { background: var(--ink-050); }
+.table .num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* --- Statistiques (tuiles) ------------------------------------------------ */
+
+.stat {
+  padding: 18px 20px;
+  background: var(--white);
+  border: 1px solid var(--ink-200);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+.stat .stat-label {
+  font-size: 0.76rem;
+  color: var(--ink-500);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+.stat .stat-value {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--ink-900);
+  font-variant-numeric: tabular-nums;
+  margin-top: 4px;
+}
+.stat .stat-sub { font-size: 0.8rem; color: var(--ink-500); margin-top: 2px; }
+
+/* --- Alertes / bannieres -------------------------------------------------- */
+
+.notice {
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid;
+  font-size: 0.88rem;
+}
+.notice-info { background: var(--info-050); border-color: #bfdbfe; color: var(--info-700); }
+.notice-warning { background: var(--warning-050); border-color: #fde68a; color: var(--warning-700); }
+.notice-danger { background: var(--danger-050); border-color: #fecaca; color: var(--danger-700); }
+.notice-success { background: var(--success-050); border-color: #bbf7d0; color: var(--success-700); }
+
+/* --- Divers --------------------------------------------------------------- */
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--ink-300);
+  border-top-color: var(--accent-700);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.skeleton {
+  background: linear-gradient(90deg, var(--ink-100) 25%, var(--ink-200) 50%, var(--ink-100) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease infinite;
+  border-radius: var(--radius-sm);
+}
+@keyframes shimmer { to { background-position: -200% 0; } }
+
+.divider { height: 1px; background: var(--ink-200); border: 0; margin: 4px 0; }
+
+.pagination { display: flex; align-items: center; gap: 8px; justify-content: flex-end; }
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+/* --- Page de connexion ---------------------------------------------------- */
+
+.login-page {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh; /* tient compte des barres mobiles */
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  overflow: hidden;
+  background:
+    radial-gradient(1200px 600px at 20% -10%, #143a54 0%, transparent 60%),
+    var(--brand-900);
+}
+.login-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  /* Image a deposer dans public/login-bg.jpg. Absente = invisible, le degrade
+     de .login-page reste affiche. */
+  background-image: url('/login-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.35;
+}
+.login-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(180deg, rgba(11, 46, 71, 0.72) 0%, rgba(11, 46, 71, 0.88) 100%);
+}
+.login-card-wrap {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* --- Renforcement responsive (mobile-first) ------------------------------- */
+
+/* Tablettes et petits ecrans */
+@media (max-width: 640px) {
+  body { font-size: 14px; }
+  .stat { padding: 14px 16px; }
+  .stat .stat-value { font-size: 1.4rem; }
+  .card-pad { padding: 16px; }
+  .card-head { padding: 14px 16px; }
+  .btn { min-height: 42px; }
+  /* Les grilles de filtres passent en une colonne pour eviter les champs ecrases. */
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+}
+
+/* Telephones etroits (iPhone SE, Android d'entree de gamme ~360px) */
+@media (max-width: 400px) {
+  .stat .stat-value { font-size: 1.25rem; }
+  h1 { font-size: 1.2rem !important; }
+  .card-head { flex-wrap: wrap; }
+  .btn { padding: 0 14px; font-size: 0.88rem; }
+  .table th, .table td { padding: 9px 10px; }
+  /* Les barres d'actions empilent leurs boutons plutot que de deborder. */
+  .row-wrap .btn { flex: 1 1 auto; }
+}
+
+/* Confort tactile : pas de survol "colle" sur ecran tactile */
+@media (hover: none) {
+  .table tbody tr:hover { background: transparent; }
+}

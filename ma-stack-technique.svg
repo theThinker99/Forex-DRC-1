@@ -1,0 +1,186 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350" role="img" aria-labelledby="title desc">
+  <title id="title">Ma stack technique</title>
+  <desc id="desc">Infographie de la stack Change RDC : front-end, back-end, base de données et frameworks-outils.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071128"/>
+      <stop offset="0.48" stop-color="#111C45"/>
+      <stop offset="1" stop-color="#26144A"/>
+    </linearGradient>
+    <radialGradient id="glowBlue" cx="0.2" cy="0.08" r="0.78">
+      <stop offset="0" stop-color="#236BFF" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#236BFF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowViolet" cx="0.95" cy="0.86" r="0.8">
+      <stop offset="0" stop-color="#A14DFF" stop-opacity=".28"/>
+      <stop offset="1" stop-color="#A14DFF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#19295D" stop-opacity=".95"/>
+      <stop offset="1" stop-color="#111B3C" stop-opacity=".92"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#4EE9FF" stop-opacity=".1"/>
+      <stop offset=".5" stop-color="#4EE9FF" stop-opacity=".8"/>
+      <stop offset="1" stop-color="#9A69FF" stop-opacity=".1"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%">
+      <feDropShadow dx="0" dy="20" stdDeviation="18" flood-color="#020513" flood-opacity=".42"/>
+    </filter>
+    <filter id="softGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <style>
+      .eyebrow { font-family: Arial, Helvetica, sans-serif; font-size: 18px; letter-spacing: 5px; font-weight: 700; fill: #70E9FF; }
+      .title { font-family: Arial, Helvetica, sans-serif; font-size: 70px; letter-spacing: -2px; font-weight: 800; fill: #FFFFFF; }
+      .subtitle { font-family: Arial, Helvetica, sans-serif; font-size: 19px; letter-spacing: .4px; font-weight: 400; fill: #B8C8F7; }
+      .cardTitle { font-family: Arial, Helvetica, sans-serif; font-size: 26px; letter-spacing: 1.6px; font-weight: 800; fill: #FFFFFF; }
+      .cardTitleTools { font-family: Arial, Helvetica, sans-serif; font-size: 20px; letter-spacing: 1px; font-weight: 800; fill: #FFFFFF; }
+      .cardSubtitle { font-family: Arial, Helvetica, sans-serif; font-size: 16px; letter-spacing: .1px; font-weight: 400; fill: #B8C8F7; }
+      .chipText { font-family: Arial, Helvetica, sans-serif; font-size: 18px; font-weight: 700; fill: #DDE7FF; }
+      .chipTextSmall { font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: 700; fill: #DDE7FF; }
+      .footer { font-family: Arial, Helvetica, sans-serif; font-size: 15px; letter-spacing: 2.2px; font-weight: 700; fill: #93A8DF; }
+    </style>
+  </defs>
+
+  <rect width="1080" height="1350" fill="url(#bg)"/>
+  <rect width="1080" height="1350" fill="url(#glowBlue)"/>
+  <rect width="1080" height="1350" fill="url(#glowViolet)"/>
+
+  <!-- Background technical grid -->
+  <g opacity=".12" stroke="#8BB8FF" stroke-width="1">
+    <path d="M60 202H1020M60 362H1020M60 522H1020M60 682H1020M60 842H1020M60 1002H1020M60 1162H1020"/>
+    <path d="M120 145V1225M280 145V1225M440 145V1225M600 145V1225M760 145V1225M920 145V1225"/>
+  </g>
+  <g fill="#60E5FF" opacity=".3">
+    <circle cx="120" cy="202" r="3"/><circle cx="440" cy="362" r="3"/><circle cx="760" cy="522" r="3"/>
+    <circle cx="920" cy="842" r="3"/><circle cx="600" cy="1002" r="3"/><circle cx="280" cy="1162" r="3"/>
+  </g>
+
+  <!-- Header -->
+  <text x="540" y="114" text-anchor="middle" class="eyebrow">CHANGE RDC · FULL-STACK</text>
+  <text x="540" y="193" text-anchor="middle" class="title">MA STACK TECHNIQUE</text>
+  <text x="540" y="235" text-anchor="middle" class="subtitle">Les technologies qui font tourner la plateforme.</text>
+  <rect x="390" y="264" width="300" height="2" rx="1" fill="url(#line)"/>
+
+  <!-- connector lines -->
+  <g fill="none" stroke="url(#line)" stroke-width="3" opacity=".9">
+    <path d="M510 470H570"/>
+    <path d="M510 850H570"/>
+    <path d="M270 655V665H810V655"/>
+    <path d="M270 850V838H810V850"/>
+  </g>
+  <g fill="#66EDFF" filter="url(#softGlow)">
+    <circle cx="540" cy="470" r="5"/><circle cx="540" cy="850" r="5"/>
+    <circle cx="270" cy="665" r="4"/><circle cx="810" cy="665" r="4"/>
+  </g>
+
+  <!-- Card 1: Front-end -->
+  <g filter="url(#shadow)">
+    <rect x="70" y="330" width="440" height="325" rx="32" fill="url(#panel)" stroke="#5282FA" stroke-opacity=".45"/>
+    <rect x="70" y="330" width="8" height="325" rx="4" fill="#4EE9FF"/>
+  </g>
+  <g transform="translate(110 370)">
+    <circle cx="49" cy="49" r="49" fill="#173C6B" stroke="#4EE9FF" stroke-opacity=".65"/>
+    <!-- browser icon -->
+    <rect x="20" y="24" width="58" height="48" rx="7" fill="none" stroke="#82F1FF" stroke-width="4"/>
+    <path d="M20 39H78" stroke="#82F1FF" stroke-width="4"/>
+    <circle cx="29" cy="32" r="2.8" fill="#82F1FF"/><circle cx="38" cy="32" r="2.8" fill="#82F1FF"/>
+    <path d="M39 51L32 57L39 63M59 51L66 57L59 63" fill="none" stroke="#82F1FF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="228" y="406" class="cardTitle">FRONT-END</text>
+  <text x="228" y="438" class="cardSubtitle">Web · UI · Expérience utilisateur</text>
+  <g>
+    <rect x="110" y="500" width="154" height="46" rx="23" fill="#20366B" stroke="#4EE9FF" stroke-opacity=".38"/>
+    <text x="187" y="530" text-anchor="middle" class="chipText">Next.js 15</text>
+    <rect x="280" y="500" width="116" height="46" rx="23" fill="#20366B" stroke="#4EE9FF" stroke-opacity=".38"/>
+    <text x="338" y="530" text-anchor="middle" class="chipText">React 19</text>
+    <rect x="110" y="563" width="160" height="46" rx="23" fill="#20366B" stroke="#4EE9FF" stroke-opacity=".38"/>
+    <text x="190" y="593" text-anchor="middle" class="chipText">TypeScript</text>
+    <rect x="286" y="563" width="110" height="46" rx="23" fill="#20366B" stroke="#4EE9FF" stroke-opacity=".38"/>
+    <text x="341" y="593" text-anchor="middle" class="chipText">CSS</text>
+  </g>
+
+  <!-- Card 2: Back-end -->
+  <g filter="url(#shadow)">
+    <rect x="570" y="330" width="440" height="325" rx="32" fill="url(#panel)" stroke="#A975FF" stroke-opacity=".48"/>
+    <rect x="1002" y="330" width="8" height="325" rx="4" fill="#B380FF"/>
+  </g>
+  <g transform="translate(610 370)">
+    <circle cx="49" cy="49" r="49" fill="#3A226B" stroke="#C398FF" stroke-opacity=".7"/>
+    <!-- server icon -->
+    <rect x="23" y="20" width="52" height="24" rx="6" fill="none" stroke="#DFCEFF" stroke-width="4"/>
+    <rect x="23" y="53" width="52" height="24" rx="6" fill="none" stroke="#DFCEFF" stroke-width="4"/>
+    <circle cx="34" cy="32" r="3" fill="#DFCEFF"/><circle cx="34" cy="65" r="3" fill="#DFCEFF"/>
+    <path d="M46 32H65M46 65H65" stroke="#DFCEFF" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <text x="728" y="406" class="cardTitle">BACK-END</text>
+  <text x="728" y="438" class="cardSubtitle">API REST · Auth · Sécurité</text>
+  <g>
+    <rect x="610" y="500" width="132" height="46" rx="23" fill="#35215F" stroke="#B380FF" stroke-opacity=".42"/>
+    <text x="676" y="530" text-anchor="middle" class="chipText">NestJS 10</text>
+    <rect x="758" y="500" width="126" height="46" rx="23" fill="#35215F" stroke="#B380FF" stroke-opacity=".42"/>
+    <text x="821" y="530" text-anchor="middle" class="chipText">Node.js</text>
+    <rect x="610" y="563" width="126" height="46" rx="23" fill="#35215F" stroke="#B380FF" stroke-opacity=".42"/>
+    <text x="673" y="593" text-anchor="middle" class="chipText">API REST</text>
+    <rect x="752" y="563" width="126" height="46" rx="23" fill="#35215F" stroke="#B380FF" stroke-opacity=".42"/>
+    <text x="815" y="593" text-anchor="middle" class="chipText">JWT</text>
+  </g>
+
+  <!-- Card 3: Database -->
+  <g filter="url(#shadow)">
+    <rect x="70" y="850" width="440" height="325" rx="32" fill="url(#panel)" stroke="#36DDB9" stroke-opacity=".46"/>
+    <rect x="70" y="850" width="8" height="325" rx="4" fill="#40F2C5"/>
+  </g>
+  <g transform="translate(110 890)">
+    <circle cx="49" cy="49" r="49" fill="#124C57" stroke="#56FFD4" stroke-opacity=".72"/>
+    <!-- database icon -->
+    <ellipse cx="49" cy="28" rx="27" ry="11" fill="none" stroke="#B6FFE9" stroke-width="4"/>
+    <path d="M22 28V66C22 72 34 77 49 77C64 77 76 72 76 66V28" fill="none" stroke="#B6FFE9" stroke-width="4"/>
+    <path d="M22 47C22 53 34 58 49 58C64 58 76 53 76 47" fill="none" stroke="#B6FFE9" stroke-width="4"/>
+  </g>
+  <text x="228" y="926" class="cardTitle">BASE DE DONNÉES</text>
+  <text x="228" y="958" class="cardSubtitle">Données structurées · Audit · Fiabilité</text>
+  <g>
+    <rect x="110" y="1020" width="156" height="46" rx="23" fill="#164B59" stroke="#40F2C5" stroke-opacity=".45"/>
+    <text x="188" y="1050" text-anchor="middle" class="chipText">PostgreSQL</text>
+    <rect x="282" y="1020" width="144" height="46" rx="23" fill="#164B59" stroke="#40F2C5" stroke-opacity=".45"/>
+    <text x="354" y="1050" text-anchor="middle" class="chipText">Prisma ORM</text>
+    <rect x="110" y="1083" width="135" height="46" rx="23" fill="#164B59" stroke="#40F2C5" stroke-opacity=".45"/>
+    <text x="177" y="1113" text-anchor="middle" class="chipText">Migrations</text>
+    <rect x="261" y="1083" width="149" height="46" rx="23" fill="#164B59" stroke="#40F2C5" stroke-opacity=".45"/>
+    <text x="335" y="1113" text-anchor="middle" class="chipTextSmall">Decimal monétaire</text>
+  </g>
+
+  <!-- Card 4: Frameworks & tools -->
+  <g filter="url(#shadow)">
+    <rect x="570" y="850" width="440" height="325" rx="32" fill="url(#panel)" stroke="#FF7CAB" stroke-opacity=".5"/>
+    <rect x="1002" y="850" width="8" height="325" rx="4" fill="#FF82B3"/>
+  </g>
+  <g transform="translate(610 890)">
+    <circle cx="49" cy="49" r="49" fill="#662452" stroke="#FFB4D0" stroke-opacity=".72"/>
+    <!-- layered tools icon -->
+    <path d="M49 20L78 36L49 52L20 36L49 20Z" fill="none" stroke="#FFD0E2" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M20 49L49 65L78 49M20 62L49 78L78 62" fill="none" stroke="#FFD0E2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="728" y="926" class="cardTitleTools">FRAMEWORKS &amp; OUTILS</text>
+  <text x="728" y="958" class="cardSubtitle">Déploiement · Docs · Stockage</text>
+  <g>
+    <rect x="610" y="1020" width="130" height="46" rx="23" fill="#5A2450" stroke="#FF9BC4" stroke-opacity=".48"/>
+    <text x="675" y="1050" text-anchor="middle" class="chipText">Docker</text>
+    <rect x="756" y="1020" width="132" height="46" rx="23" fill="#5A2450" stroke="#FF9BC4" stroke-opacity=".48"/>
+    <text x="822" y="1050" text-anchor="middle" class="chipText">Swagger</text>
+    <rect x="610" y="1083" width="134" height="46" rx="23" fill="#5A2450" stroke="#FF9BC4" stroke-opacity=".48"/>
+    <text x="677" y="1113" text-anchor="middle" class="chipText">MinIO / S3</text>
+    <rect x="760" y="1083" width="128" height="46" rx="23" fill="#5A2450" stroke="#FF9BC4" stroke-opacity=".48"/>
+    <text x="824" y="1113" text-anchor="middle" class="chipText">PDFKit</text>
+  </g>
+
+  <!-- Footer -->
+  <g transform="translate(0 1250)">
+    <rect x="70" y="0" width="940" height="1" fill="#6A89E4" opacity=".45"/>
+    <circle cx="96" cy="48" r="8" fill="#4EE9FF"/>
+    <text x="120" y="54" class="footer">CONÇU POUR UNE PLATEFORME FIABLE, SÉCURISÉE ET ÉVOLUTIVE</text>
+  </g>
+</svg>

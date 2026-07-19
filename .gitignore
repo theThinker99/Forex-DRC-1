@@ -1,0 +1,31 @@
+node_modules/
+dist/
+build/
+.next/
+out/
+
+# Secrets : jamais sur GitHub. Couvre tous les .env, a tous les niveaux.
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+
+# Pieces d'identite et bordereaux stockes localement : donnees personnelles.
+storage/
+!storage/.gitkeep
+
+*.tsbuildinfo
+
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+
+coverage/
+.nyc_output/
+
+.idea/
+.vscode/*
+!.vscode/extensions.json
